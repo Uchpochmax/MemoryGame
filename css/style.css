@@ -1,0 +1,156 @@
+@import url('./confetti.css');
+
+:root {
+    --theme-color: #1a0022;
+    --white-color: #ffffff;
+    --accent-color: #FF9900;
+    --second-color: #1fc0e9;
+    --successfully-color: #44f782;
+    --hover-color: #c6c6c6;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--theme-color);
+}
+
+.game-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.container {
+    max-width: 1250px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.header {
+    padding: 15px 0;
+}
+
+.header__title {
+    text-align: center;
+    margin: 0;
+    color: var(--white-color);
+}
+
+.game-section {
+    padding-top: 50px;
+}
+
+.game-section__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Основные стили для game-menu */
+
+.game-menu__title {
+    margin: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    color: var(--white-color);
+}
+
+.game-menu__difficult-btn,
+.restart-btn {
+    font-style: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: var(--theme-color);
+    transition: background-color .3s ease-in-out, color .3s ease-in-out, outline .3s ease-in-out;
+}
+
+.game-menu__difficult-btn:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.game-menu__difficult-btn,
+.restart-btn {
+    padding: 15px 20px;
+    background-color: var(--accent-color);
+}
+
+.game-menu__difficult-btn:hover,
+.restart-btn:hover {
+    color: var(--white-color);
+    background-color: var(--theme-color);
+    outline: var(--accent-color) 1px solid;
+}
+
+/* Доска с картами */
+
+
+.game-table {
+    max-width: 500px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 25vh;;
+}
+
+.game-card {
+    width: 50px;
+    height: 100px;
+    flex: 0 0 23%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--accent-color);
+    border-radius: 5px;
+    transition: all 0.2s linear;
+    margin: 1%;
+    cursor: pointer;
+}
+
+.game-card i {
+    font-size: 40px;
+    display: none;
+}
+
+.game-card i+i {
+    display: block;
+}
+
+/* Переворот карты */
+
+.game-card.flip {
+    background: var(--second-color) !important;
+    transform: perspective(100px) rotateY(180deg);
+}
+
+.game-card.flip i {
+    display: block;
+}
+
+.game-card.flip i+i {
+    display: none;
+}
+
+/* стиль для угаданных карт */
+
+.game-card.successfully {
+    background: var(--successfully-color) !important;
+}
+
+.game-card:hover {
+    background: var(--hover-color);
+}
