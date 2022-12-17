@@ -103,7 +103,7 @@ body {
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 25vh;;
+    margin-bottom: 25px;
 }
 
 .game-card {
