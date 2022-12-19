@@ -4,6 +4,7 @@
     --theme-color: #1a0022;
     --white-color: #ffffff;
     --accent-color: #FF9900;
+    --timer-color: #ff5959;
     --second-color: #1fc0e9;
     --successfully-color: #44f782;
     --hover-color: #c6c6c6;
@@ -153,4 +154,58 @@ body {
 
 .game-card:hover {
     background: var(--hover-color);
+}
+
+/* таймер */
+
+.game-timer,
+.header-timer {
+    color: var(--white-color);
+}
+
+.header-timer {
+    padding-bottom: 25px;
+}
+
+.game-timer {
+    padding-bottom: 25px;
+    font-size: 40px;
+    font-weight: 700;
+    text-shadow: var(--accent-color) 1px 1px;
+}
+
+.last-10-seconds,
+.last-8-seconds,
+.last-6-seconds,
+.last-4-seconds,
+.last-2-seconds {
+    transition: all .5s linear;
+    color: var(--timer-color);
+    text-shadow: var(--white-color) 1px 1px;
+    transform: scale(1.5, 1.5);
+}
+
+.last-9-seconds,
+.last-7-seconds,
+.last-5-seconds,
+.last-3-seconds,
+.last-1-seconds {
+    transition: all .5s linear;
+    color: var(--timer-color);
+    text-shadow: var(--white-color) 1px 1px;
+    transform: scale(1, 1);
+}
+
+.game-over {
+    color: var(--accent-color);
+    font-size: 60px;
+    font-weight: 700;
+    text-shadow: var(--white-color) 3px 3px;
+    padding-bottom: 50px;
+    transition: all 2s ease-in-out;
+    transform: scale(0);
+}
+
+.game-over.move {
+    transform: scale(1);
 }
