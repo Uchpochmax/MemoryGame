@@ -27,18 +27,55 @@ export const createIconArray = (initialCount) => {
         'dragon',
         'carrot',
         'cat',
-        'star'
+        'star',
+        'bus',
+        'car-side',
+        'ghost',
+        'chess',
+        'house',
+        'cloud',
+        'bell',
+        'hippo',
+        'paperclip',
+        'pen',
+        'bolt',
+        'plane',
+        'lemon',
+        'truck',
+        'anchor',
+        'fish',
+        'landmark',
+        'shirt',
+        'cable-car',
+        'clock',
+        'calendar',
+        'moon',
+        'crown',
+        'face-smile',
+        'umbrella',
+        'camera',
+        'paper-plane',
+        'gamepad',
+        'bug',
+        'volleyball',
+        'skull',
+        'peace'
     ];
+
 
     switch (initialCount) {
         case 10:
-            return cardsIcons.slice(0, 5);
+            return shuffle(cardsIcons).slice(0, 5);
         case 12:
-            return cardsIcons.slice(0, 6);
+            return shuffle(cardsIcons).slice(0, 6);
         case 14:
-            return cardsIcons.slice(0, 7);
+            return shuffle(cardsIcons).slice(0, 7);
         case 16:
-            return cardsIcons;
+            return shuffle(cardsIcons).slice(0, 8);
+        case 18:
+            return shuffle(cardsIcons).slice(0, 9);
+        case 20:
+            return shuffle(cardsIcons).slice(0, 10);
         default:
             break;
     }

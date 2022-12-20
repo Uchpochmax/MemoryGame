@@ -63,13 +63,13 @@ export const startGame = (difficult) => {
 
     gameSection.innerHTML = '';
     restartBtn.textContent = 'Рестарт';
-    gameTimerHeader.textContent = 'У вас есть ровно 60 секунд:';
+    gameTimerHeader.textContent = 'У вас есть ровно 30 секунд:';
     gameTable.classList.add('game-table');
     restartBtn.classList.add('restart-btn');
     gameTimerHeader.classList.add('header-timer');
 
     shuffle(duplicatedCardsIcons);
-    gameTimer(60);
+    gameTimer(30);
 
     // для каждого элемента дублированного массива создается div с классом .game-card
     // с двумя элементами i
@@ -130,12 +130,18 @@ export const startGame = (difficult) => {
                 document.querySelector('.salut').innerHTML = confetti;
                 clearInterval(interval);
                 gameTimerHeader.innerHTML = 'Это было просто потрясающе! Вы уложились всего за';
-                const winTime = 60 - Number(timerCount.innerHTML);
+                const winTime = 30 - Number(timerCount.innerHTML);
                 timerCount.innerHTML = winTime;
                 const winGame = document.createElement('h2');
-                winGame.innerHTML = 'секунд. Юхууу!';
+                if (String(winTime)[0] != 1 && String(winTime)[1] == 1) {
+                    winGame.innerHTML = 'секунду. Юхууу!';
+                };
+                if (String(winTime)[0] != 1 && (String(winTime)[1] == 2 || String(winTime)[1] == 3 || String(winTime)[1] == 4)) {
+                    winGame.innerHTML = 'секунды. Юхууу!';
+                }
+                else winGame.innerHTML = 'секунд. Юхууу!';
                 restartBtn.before(winGame);
-                winGame.classList.add('header-timer');
+                winGame.classList.add('header-timer');  
             }
         }
     }))

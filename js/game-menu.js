@@ -27,6 +27,8 @@ export const createGameMenu = () => {
         createDifficultButton(12),
         createDifficultButton(14),
         createDifficultButton(16),
+        createDifficultButton(18),
+        createDifficultButton(20),
     )
     document.querySelector('.salut').innerHTML = '';
 }
